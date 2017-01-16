@@ -1,7 +1,7 @@
 
 Q1)  What initiatives would you take to speed up the test execution time?
      1. add more executors and split the test jobs. 
-     2. set the job timeup. 
+     2. set the job time out. 
      3. add slaves, and offload the build task to the slave.
      4. cache the resources the build and test needs.
      5. limit the commits, change the trigger to manuel trigger.
