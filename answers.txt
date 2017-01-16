@@ -1,0 +1,38 @@
+
+Q1)  What initiatives would you take to speed up the test execution time?
+     1. add more executors and split the test jobs. 
+     2. set the job timeup. 
+     3. add slaves, and offload the build task to the slave.
+     4. cache the resources the build and test needs.
+     5. limit the commits, change the trigger to manuel trigger.
+Q2)  It is now a problem for engineers and the business to know what versions of the components that was released when in each environment. How would you solve that?
+     we can creat a central dashboard to have this information. and  each env development build will automatically trigger the update of the dashboard.
+Q3)  They also lack visibility into when critical features was released in the past per environment, perhaps it was a few releases ago. How would you solve that?
+     we can use Jira to manage it.
+Q4)  Sales and some customers require change logs for breaking changes in production.   how would you facilitate that?
+     In release process, we will always release the release notes document.
+Q5)  What Initiatives would you take to increase the stability of the whole test suite?
+     1. analys why the stability is not good enough.
+     2. increase the platform stability. monitor the build node, CPU usage, disk usage, network usage, memory usage etc.
+     3. improve the quality of the test cases. like considering latency and some initiative.
+Q6)  What initiatives would you take to limit the number of tests without compromising on the quality controls they provide?
+     Group the test cases by step or by function or else. some test cases are covering the others so that there is no need for them to run again. 
+Q7)  What would you do to make this situation better?
+     configure jenkins using Matrix-based security or Project-based Matrix Authorization Strategy to give the user right view and control.
+Q8)  How would you measure the overall stability of the build pipeline, given that there is a difference between a failed build due to test failures and systemic instabilities?
+Q9)  How would you measure the end to end release time for a one example line test in a library all the way to the production release in a systematic way, so we could know if we are improving or doing worse?
+Q10)  How would you measure the process performance, if you include mandatory code reviews and other stop gates.
+      we can use the project management tools like MS project, HPE AGM.
+Q11)  How would you implement such a setup?
+      1. 1 x Empty postgresql database and 1 x Empty elasticsearch database and 1 x Empty redis cache
+      2. 2 x the component
+      3. 1 x Loadbalancer
+      4. 1 x API client for the test client
+
+          
+Q12)  Where would you cut off and say “now we have enough automation” at the package install, initial configuration with ldap integration, plugin configuration, or even automate the build job creation ?
+Q13)  How would you make sure that we can reliably backup and restore a jenkins server, when everyone can change the builds?
+      host the jenkins home directory on the storage with backup enabled like raid. add limit  access control to the user who can change the builds.
+      add some direcotries and all its children folder and files of jenkins home to be managed by like git and backup it periodically or on demand.  
+Q14)  Do you have any suggestions for alternative build systems that Full Moon Software could use, assuming that they cannot use 3rd party SaaS build services but need to manage their own?
+      like tavis CI.
